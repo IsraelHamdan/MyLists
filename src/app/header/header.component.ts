@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { AuthService } from '@auth0/auth0-angular';
 @Component({
   selector: 'app-header',
   standalone: true,
@@ -11,5 +12,9 @@ export class HeaderComponent {
   isMobile: boolean = false;
   isAuthenticated: boolean = false;
 
-  constructor() {}
+  constructor(private auth: AuthService) {}
+
+  login(): void {
+    this.auth.loginWithRedirect();
+  }
 }

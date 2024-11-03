@@ -13,13 +13,4 @@ export class AppComponent {
   title = 'myLists';
   showHeader: boolean = true;
   constructor(private router: Router) {}
-
-  ngOnInit() {
-    this.router.events.subscribe((e) => {
-      if (e instanceof NavigationEnd) {
-        const currentRoute = e.url;
-        this.showHeader = !['/login', '/newUser'].includes(currentRoute);
-      }
-    });
-  }
 }

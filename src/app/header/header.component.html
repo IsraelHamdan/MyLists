@@ -19,7 +19,7 @@
     <div class="header-acc">
       @if(isAuthenticated !== true) {
       <div class="header-noAuth">
-        <button class="header-btn" [routerLink]="['/login']">Login</button>
+        <button class="header-btn" (click)="login()">Login</button>
         <button class="header-btn" [routerLink]="['/newUser']">Criar conta</button>
       </div>
       } @else {

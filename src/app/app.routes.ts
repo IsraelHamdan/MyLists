@@ -1,20 +1,18 @@
 import { Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
-import { NewUserComponent } from './new-user/new-user.component';
-import { LoginComponent } from './login/login.component';
 import { ProfileComponent } from './profile/profile.component';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
 import { DeleteProfileComponent } from './delete-profile/delete-profile.component';
 import { CreatelistComponent } from './createlist/createlist.component';
 import { MyListsComponent } from './my-lists/my-lists.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { authGuardGuard } from './auth-guard.guard';
 
 export const routes: Routes = [
   { path: 'home', component: HomeComponent },
-  { path: 'newUser', component: NewUserComponent },
-  { path: 'login', component: LoginComponent },
   {
     path: 'user',
+    canActivate: [authGuardGuard],
     children: [
       {
         path: 'profile',
