@@ -1,0 +1,37 @@
+<head>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" async>
+</head>
+<header class="header-container">
+  <div class="logo-container">
+    <button class="logo-btn" [routerLink]="['/home']">MyLists</button>
+  </div>
+  <div class="header-menu">
+    @if(isMobile == true) {
+    <button>
+      <span class="material-symbols-outlined menu-toggle">menu</span>
+    </button>
+
+    }
+  </div>
+  <div class="header-nav">
+    <button class="header-btn" [routerLink]="['user/myLists']">Minhas listas</button>
+    <button class="header-btn" [routerLink]="['user/newlist']">Criar listas</button>
+    <div class="header-acc">
+      @if(isAuthenticated !== true) {
+      <div class="header-noAuth">
+        <button class="header-btn" [routerLink]="['/login']">Login</button>
+        <button class="header-btn" [routerLink]="['/newUser']">Criar conta</button>
+      </div>
+      } @else {
+      <div class="header-auth">
+        <button class="header-acc"></button>
+        <div class="header-optins">
+          <button class="header-acc_option">Perfil</button>
+          <button class="header-acc_option">Sair</button>
+        </div>
+      </div>
+      }
+    </div>
+  </div>
+
+</header>
