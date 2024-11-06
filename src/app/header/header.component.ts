@@ -15,6 +15,20 @@ export class HeaderComponent {
   constructor(private auth: AuthService) {}
 
   login(): void {
-    this.auth.loginWithRedirect();
+    this.auth.isAuthenticated$.subscribe(
+      (isAuthenticated) => {
+        if (!isAuthenticated) {
+          this.auth.loginWithRedirect();
+        } else {
+          console.log('Usuário já autenticado');
+        }
+      },
+      (error) => {
+        console.error('Erro ao verificar autenticação:', error);
+      }
+    );
+  }
+  logout(): void {
+    this.auth.logout();
   }
 }

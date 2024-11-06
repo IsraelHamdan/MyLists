@@ -1,26 +1,50 @@
 {
-  "users": [
+  "listas": [
     {
-      "id": 1,
-      "name": "Alice",
-      "email": "alice@exemplo.com",
-      "shoppingList": [
+      "id": "883f",
+      "nome": "Feira de frutas",
+      "itens": [
+        {
+          "id": 1,
+          "nome": "manga",
+          "isBuyed": false
+        },
         {
           "id": 2,
-          "title": "Revisar proposta de orçamento",
-          "included": false
+          "nome": "banana",
+          "isBuyed": false
         }
       ]
     },
     {
-      "id": 2,
-      "name": "Bob",
-      "email": "bob@exemplo.com",
-      "shoppingList": [
+      "id": "9776",
+      "nome": "Feira de frutas",
+      "itens": [
         {
           "id": 1,
-          "title": "Planejar reunião semanal",
-          "included": false
+          "nome": "manga",
+          "isBuyed": false
+        },
+        {
+          "id": 2,
+          "nome": "banana",
+          "isBuyed": false
+        }
+      ]
+    },
+    {
+      "id": "7c8e",
+      "nome": "Reforma do Opala SS 74",
+      "itens": [
+        {
+          "id": 1,
+          "nome": "Rodas SS 15",
+          "isBuyed": false
+        },
+        {
+          "id": 2,
+          "nome": "Estofamento vinho 74",
+          "isBuyed": false
         }
       ]
     }

@@ -6,7 +6,7 @@ import { DeleteProfileComponent } from './delete-profile/delete-profile.componen
 import { CreatelistComponent } from './createlist/createlist.component';
 import { MyListsComponent } from './my-lists/my-lists.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { authGuardGuard } from './auth-guard.guard';
+import { authGuardGuard } from './guards/auth-guard.guard';
 
 export const routes: Routes = [
   { path: 'home', component: HomeComponent },
