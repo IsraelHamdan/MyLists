@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { AuthService } from '@auth0/auth0-angular';
 @Component({
@@ -9,26 +9,31 @@ import { AuthService } from '@auth0/auth0-angular';
   styleUrl: './header.component.sass',
 })
 export class HeaderComponent {
-  isMobile: boolean = false;
-  isAuthenticated: boolean = false;
+  protected isMobile: boolean = false;
+  protected isAuthenticated: boolean = false;
+  protected isDropdown: boolean = false;
 
   constructor(private auth: AuthService) {}
 
-  login(): void {
-    this.auth.isAuthenticated$.subscribe(
-      (isAuthenticated) => {
-        if (!isAuthenticated) {
-          this.auth.loginWithRedirect();
-        } else {
-          console.log('Usuário já autenticado');
-        }
+  ngOnInit() {
+    this.auth.isAuthenticated$.subscribe({
+      next: (isAuthenticated) => {
+        this.isAuthenticated = isAuthenticated;
       },
-      (error) => {
-        console.error('Erro ao verificar autenticação:', error);
-      }
-    );
+      error: (error) => {
+        console.log(`Erro ao verificar autentivação: ${error}`);
+      },
+    });
+  }
+
+  login(): void {
+    this.auth.loginWithRedirect();
   }
   logout(): void {
     this.auth.logout();
+  }
+
+  toggleDropdown(): void {
+    this.isDropdown = !this.isDropdown;
   }
 }

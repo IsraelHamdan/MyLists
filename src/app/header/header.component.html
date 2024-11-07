@@ -1,4 +1,6 @@
 <head>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=account_circle" />
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" async>
 </head>
 <header class="header-container">
@@ -10,24 +12,29 @@
     <button>
       <span class="material-symbols-outlined menu-toggle">menu</span>
     </button>
-
     }
   </div>
   <div class="header-nav">
     <button class="header-btn" [routerLink]="['user/myLists']">Minhas listas</button>
     <button class="header-btn" [routerLink]="['user/newlist']">Criar listas</button>
     <div class="header-acc">
-      @if(isAuthenticated !== true) {
+      @if(!isAuthenticated) {
       <div class="header-noAuth">
         <button class="header-btn" (click)="login()">Login</button>
       </div>
       } @else {
       <div class="header-auth">
-        <button class="header-acc"></button>
-        <div class="header-optins">
+        <button class="header-acc" (click)="toggleDropdown()">
+          <span class="material-symbols-outlined">
+            account_circle
+          </span>
+        </button>
+        @if(isDropdown) {
+        <div class="header-options">
           <button class="header-acc_option">Perfil</button>
           <button class="header-acc_option">Sair</button>
         </div>
+        }
       </div>
       }
     </div>

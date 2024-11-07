@@ -3,21 +3,105 @@
 .title
   color: global.$title-color
   font-family: 'Lobster', sans-serif
-  font-size: 56px
+  font-size: 46px
+  margin-bottom: 1rem
 
 .contianer
   display: flex
   justify-content: center
+  flex-direction: column
   align-items: center
-  height: 100vh
-  margin: 0
+  width: 100%
+  margin-top: 50px
+  gap: 1.5em
 
 .form-container
   display: flex
   align-items: center
-  justify-content: center
   flex-direction: column
   background-color: global.$card-bg
+  padding: 20px
+  margin-bottom: 50px
   width: 608px
   height: 500px
   border-radius: 30px
+
+.form-data
+  display: flex
+  flex-direction: column
+  gap: 1.5rem
+  width: 100%
+  margin-bottom: 16px
+
+.list-title
+  display: flex
+  justify-items: center
+  align-items: center
+  font-size: 46px
+  margin-bottom: 25px
+  background-color: global.$card-bg
+  width: 100%
+
+.form-listTitle
+  margin-bottom: 20px
+  text-align: center
+  font-style: 36px
+  font-family: 'Lobster', sans-serif
+  color: global.$font-color
+  font-weight: bold
+  border: none
+  background-color: global.$card-bg
+  width: 100%
+  height: 56px
+  &::placeholder
+    font-size: 36px
+    font-family: 'Lobster', sans-serif
+    color: global.$title-color-opacity
+  &:focus
+    font-size: 36px
+    font-family: 'Lobster', sans-serif
+    color: global.$title-color
+    border: none
+    border-bottom: 2px solid global.$font-color
+    outline: none
+  &:blur
+    border: none
+
+.form-data_input
+  width: 100%
+  height: 46px
+  border: none
+  font-size: 26px
+  color: global.$font-color
+  border-bottom: 1px solid global.$font-color
+  background-color: global.$card-bg
+  border: none
+  border-bottom: 1px solid global.$font-color
+  &::placeholder
+    background-color: global.$card-bg
+    font-size: 26px
+    color: global.$font-color
+  &:focus
+    color: global.$font-color
+    font-size: 26px
+    font-style: italic
+    border: none
+    border-bottom: 1px solid global.$font-color
+    outline: none
+
+.form-actions
+  display: flex
+  flex-direction: row
+  align-items: center
+  justify-content: space-around
+  gap: 1rem
+  margin-top: 90px
+
+.form-btn
+  background-color: global.$btn-bg
+  color: global.$btn-color
+  border-radius: 20px
+  border: none
+  width: 262px
+  height: 51px
+  font-size: 26px
