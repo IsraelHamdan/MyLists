@@ -1,5 +1,5 @@
 export interface itemDTO {
-  id: number;
+  id: string;
   nome: string;
-  isBuyed: boolean;
+  isBuied: boolean;
 }

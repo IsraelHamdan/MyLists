@@ -7,12 +7,12 @@
         {
           "id": 1,
           "nome": "manga",
-          "isBuyed": false
+          "isBuied": false
         },
         {
           "id": 2,
           "nome": "banana",
-          "isBuyed": false
+          "isBuied": false
         }
       ]
     },
@@ -23,12 +23,12 @@
         {
           "id": 1,
           "nome": "manga",
-          "isBuyed": false
+          "isBuied": false
         },
         {
           "id": 2,
           "nome": "banana",
-          "isBuyed": false
+          "isBuied": false
         }
       ]
     },
@@ -39,14 +39,15 @@
         {
           "id": 1,
           "nome": "Rodas SS 15",
-          "isBuyed": false
+          "isBuied": false
         },
         {
           "id": 2,
           "nome": "Estofamento vinho 74",
-          "isBuyed": false
+          "isBuied": false
         }
       ]
     }
+
   ]
 }

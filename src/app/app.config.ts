@@ -4,6 +4,7 @@ import { provideAuth0 } from '@auth0/auth0-angular';
 import { routes } from './app.routes';
 import { provideHttpClient } from '@angular/common/http';
 import { provideToastr } from 'ngx-toastr';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -21,6 +22,6 @@ export const appConfig: ApplicationConfig = {
       timeOut: 3000,
       positionClass: 'toast-button-right',
       preventDuplicates: true,
-    }),
+    }), provideAnimationsAsync(),
   ],
 };

@@ -45,7 +45,7 @@ export class ApiService {
       .pipe(catchError((error) => this.handleError(error)));
   }
 
-  getItem(listId: string, itemId: number): Observable<itemDTO> {
+  getItem(listId: string, itemId: string): Observable<itemDTO> {
     return this.http.get<listaDTO>(`${this.api}/${listId}`).pipe(
       map((lista) => {
         const item = lista.itens.find((item) => item.id === itemId);
@@ -60,7 +60,7 @@ export class ApiService {
 
   putItem(
     listId: string,
-    itemId: number,
+    itemId: string,
     updateItem: itemDTO
   ): Observable<itemDTO> {
     return this.http.get<listaDTO>(`${this.api}/${listId}`).pipe(
